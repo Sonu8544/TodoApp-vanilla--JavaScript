@@ -7,59 +7,98 @@
       font-family: 'Roboto Condensed', sans-serif;
   }
 
-  .title {
-      color: rgb(255, 115, 0);
-      font-size: 30px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      margin: 20px auto 20px;
-  }
-
-  .p-text {
-      color: rgb(255, 115, 0);
-      font-size: 18px;
-      font-weight: 500;
-  }
-
-  input[type="text"] {
-      transition: width 0.5s ease-in-out;
-  }
-
-  input[type="text"]:focus {
+  .container {
       width: 100%;
+      min-height: 100vh;
+      background: linear-gradient(200deg, black, rgb(180, 180, 180), gray);
+      padding: 10px;
   }
 
-  .input {
-      color: rgb(255, 115, 0);
-      font-size: 18px;
-      font-weight: 500;
+  .todo-app {
+      width: 100%;
+      max-width: 540px;
+      background: #fff;
+      margin: 100px auto 20px;
+      padding: 40px 30px;
+      border-radius: 20px;
+  }
+
+  .todo-app h2 {
+      color: black;
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      gap: 20px;
+  }
+
+  .todo-app h2>img {
+      max-width: 30px;
+      border-radius: 5px;
+  }
+
+  .row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #e6e7e8;
+      border-radius: 30px;
+      padding-left: 20px;
+      margin-bottom: 25px;
+  }
+
+  input {
+      flex: 1;
+      border: none;
       outline: none;
-      border: 3px solid orange;
-      border-radius: 10px;
-      min-width: 100%;
-  }
-
-  .btn {
-      background-color: transparent;
+      background: transparent;
+      padding: 10px;
       color: orange;
-      font-size: 10px;
       font-weight: 500;
-      outline: none;
-      border-radius: 10px;
+      letter-spacing: 1.3px;
+      font-size: 18px;
+      font-weight: 24px;
   }
 
-  /* input[type="text"] {
-      background-color: black;
+  button {
+      border: none;
+      outline: none;
+      padding: 10px 40px;
+      background: orange;
+      font-weight: 600;
       color: white;
       font-size: 18px;
-      font-weight: 500;
-      text-align: center;
-      display: flex;
-      justify-content: space-between;
-  } */
+      cursor: pointer;
+      border-radius: 40px;
+  }
 
-  /* input[type="text"]:focus {
-      background-color: transparent;
-      color: black;
-      border-bottom: 1px solid orange;
-  } */
+  ul li{
+    list-style: none;
+    font-size: 18px;
+    padding: 10px 18px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+  }
+
+  ul li::before{
+    content: "";
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRu5ma9OYb9X5rCGldkwN7sSbvjE_qYpOdvhg&usqp=CAU);
+    background-size: cover;
+    margin-right: 10px;
+    background-position: center;
+    top: 10px;
+    left: 8px;
+}
+
+ul li.checked{
+    color: blue;
+    text-decoration: line-through;
+}
+
+ul li.checked::before{
+     background-image: url(https://media.istockphoto.com/id/1094780808/vector/approval-symbol-check-mark-in-a-circle-drawn-by-hand-vector-green-sign-ok-approval-or.jpg?s=612x612&w=0&k=20&c=0mlB50r769kHmLkVcq_HpdNFGdHIA_Cu_tPqN4IKZbc=);
+}
